@@ -1,4 +1,4 @@
-let valueCounter = 0;
+//let valueCounter = 0;
 
 (function() {
 
@@ -40,14 +40,21 @@ let questions = [{
 	let qCounter = 0; //Tracks question number
 	let selections = []; //Array with user choices
 	let quiz = $('#quiz'); //Quiz div obj
+	let valueCounter = 0; //new
+
 
 	//Circulates question
 	displayNext();
 
+
+
 	//Click handler for 'next' button
 	$('#next').on('click', function(e) {
 		e.preventDefault();
-	
+		
+		//Progress bar reappear after 'start over' and 'next' triggered
+		$('#progress').show();	
+		
 		//Stop click during fade into next question
 		if(quiz.is(':animated')) {
 			return false;
@@ -84,7 +91,7 @@ let questions = [{
 		}	
 		qCounter = 0;
 		selections = [];
-		//valueCounter = 0; 
+		valueCounter = 0; 
 		$('#progress').attr('value', 0);
 		displayNext();
 		$('#start').hide();
@@ -177,6 +184,10 @@ valueCounter += 10;
 	$('#next').on('click', function(){
 	$('#progress').attr('value', valueCounter+= 10);
 });
+	$('#previous').on('click', function(){  //new
+	$('#progress').attr('value', valueCounter-= 10);  //new
+}); //new
+
 
 //Calculates score and returns user score
 function displayScore() {
@@ -188,7 +199,7 @@ function displayScore() {
 		numCorrect++;
 	}
 }
-
+	$('#progress').hide(); //test
 	score.append('Scored ' + numCorrect + ' outta ' + questions.length + ' correct!!! ');
 
 	return score;
