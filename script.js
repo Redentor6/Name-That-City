@@ -1,26 +1,40 @@
+let valueCounter = 0;
+
 (function() {
 
 
 let questions = [{
-		question: "assets/rdj.jpg",
+		question: 'assets/rdj.jpg',
 		choices: ['Sao Paulo', 'Fortaleza', 'Rio De Janeiro', 'Brasilia'], 
-		correctAnswer: 'Rio De Janeiro' 
+		correctAnswer: 2 
 	},  {
 		question: 'assets/hk.jpg',
 		choices: ['Hong Kong', 'Bejing', 'Tokyo', 'Singapore'],
-		correctAnswer: 'Hong Kong'
+		correctAnswer: 0
 	},	{
 		question: 'assets/syd.jpg',
 		choices: ['Melbourne', 'Perth', 'Brisbane', 'Sydney'],
-		correctAnswer: 'Sydney'
+		correctAnswer: 3
 	},	{	
 		question: 'assets/dub.jpg',
 		choices: ['Dubai', 'Baghdad', 'Istanbul', 'Jordan'],
-		correctAnswer: 'Dubai'
+		correctAnswer: 0
 	},  {	
+		question: 'assets/prs.png',
+		choices: ['Milan', 'Berlin', 'Paris', 'Amsterdam'],
+		correctAnswer: 2
+	},	{	
+		question: 'assets/tky.jpg',
+		choices: ['Shanghai', 'Bangkok', 'Taipei', 'Tokyo'],
+		correctAnswer: 3
+	},	{	
+		question: 'assets/trn.png',
+		choices: ['Vancouver', 'Montreal', 'Toronto', 'Winnepeg'],
+		correctAnswer: 2
+	},	{	
 		question: 'assets/nyc.jpg',
 		choices: ['Los Angeles', 'New York City', 'Chicago', 'Houston'],
-		correctAnswer: 'New York City'
+		correctAnswer: 1
 	}];
 
 	let qCounter = 0; //Tracks question number
@@ -40,7 +54,7 @@ let questions = [{
 		};
 		choose();
 
-		//If they don't selct, this happens
+		//If they don't select, this happens
 		if (isNaN(selections[qCounter])) {
 			alert('Select Something Please!');
 		}	else {
@@ -56,8 +70,22 @@ let questions = [{
 		if(quiz.is(':animated')) {
 			return false;
 		}
+		choose();
+		qCounter--;
+		displayNext();
+	});
+
+	//Click handler for 'start over' button
+	$('#start').on('click', function(e) {
+		e.preventDefault();
+
+		if(quiz.is('animated')) {
+			return false;
+		}	
 		qCounter = 0;
 		selections = [];
+		//valueCounter = 0; 
+		$('#progress').attr('value', 0);
 		displayNext();
 		$('#start').hide();
 	});
@@ -77,8 +105,10 @@ function createQuestionElement(index) {
 		id: 'question'
 	});
 
-	let header = $('<h2>City ' + (index + 1) + ':</h2>');
-	qElement.append('question');
+	let questionImg = $(`<img src="${questions[index].question}"/>`)
+
+	let question = $('<p>').append(questions[index].question);
+	qElement.append(questionImg);
 
 	let radioButtons = createRadios(index);
 	qElement.append(radioButtons);
@@ -107,6 +137,7 @@ function createRadios(index) {
 function choose() {
 	selections[qCounter] = 
 	+$('input[name="answer"]:checked').val();
+	
 }
 
 //Display next requested element
@@ -141,13 +172,19 @@ $('input[value='+selections[qCounter]+']').prop('checked', true);
 	});
 }
 
-//Claculates score and returns a text element to be displayed
+//Progress bar
+valueCounter += 10;
+	$('#next').on('click', function(){
+	$('#progress').attr('value', valueCounter+= 10);
+});
+
+//Calculates score and returns user score
 function displayScore() {
-	let score = $('<p>', {id: 'question'});
+	let score = $('<p>',{id: 'question'});
 
 	let numCorrect = 0;
 	for (let i = 0; i < selections.length; i++) {
-		if(selections[i] === questions[i].correctAnswer) {
+		if (selections[i] === questions[i].correctAnswer) {
 		numCorrect++;
 	}
 }
