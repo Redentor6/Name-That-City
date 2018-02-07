@@ -1,6 +1,6 @@
 body {
 	font-family: sans-serif;
-}
+} 
 
 h1	{
 	text-align: center;
@@ -10,10 +10,22 @@ h1	{
 }
 
 #title	{
-	text-decoration: underline;
 	text-align: top; 
+	font-size: 25;
 	font-weight: 700;
-
+	//Borrowed from http://markdotto.com/playground/3d-text/
+	text-shadow: 0 1px 0 #ccc,
+	          	 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
 }
 
 #quiz	{
@@ -65,9 +77,25 @@ button	{
 	border-radius: 5px;
 	color: #FFFFFF;
 	font-weight: bold;
-	box-shadow: 5px 5px 5px #888;
+	box-shadow: 15px 15px 15px #888;
 	float: center;
 	text-justify: auto;
+}
+
+#title	{
+	text-shadow: 0 1px 0 #ccc,
+	          	 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+     
 }
 
 ul {
