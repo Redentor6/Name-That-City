@@ -54,7 +54,7 @@ button	{
 }
 
 #container	{
-	height: 450px;
+	height: 500px;
 	width: 80%;
 	margin-top: 50px;
 	margin-left: auto;
@@ -140,6 +140,7 @@ progress {
 	background: #EC6C6C;
 	border-radius: 30px;
 	padding: 5px;
+	float: right;
 }
 
 

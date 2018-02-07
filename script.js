@@ -1,4 +1,4 @@
-//let valueCounter = 0;
+
 
 (function() {
 
@@ -38,9 +38,9 @@ let questions = [{
 	}];
 
 	let qCounter = 0; //Tracks question number
-	let selections = []; //Array with user choices
+	let selections = []; //Array with ? choices
 	let quiz = $('#quiz'); //Quiz div obj
-	let valueCounter = 0; //new
+	let valueCounter = 0; //Progress bar value
 
 
 	//Circulates question
@@ -64,13 +64,14 @@ let questions = [{
 		//If they don't select, this happens
 		if (isNaN(selections[qCounter])) {
 			alert('Select Something Please!');
+			valueCounter -= 10; //New
 		}	else {
 			qCounter++;
 			displayNext();
 		}
 	});
 
-	//CLick handler for 'previous' button
+	//Click handler for 'previous' button
 	$('#previous').on('click', function(e) {
 		e.preventDefault();
 
@@ -106,7 +107,6 @@ let questions = [{
 	});
 
 // Creates and returns the div that contains the ?'s and answer selections
-
 function createQuestionElement(index) {
 	let qElement = $('<div>',	{
 		id: 'question'
@@ -185,8 +185,8 @@ valueCounter += 10;
 	$('#progress').attr('value', valueCounter+= 10);
 });
 	$('#previous').on('click', function(){  //new
-	$('#progress').attr('value', valueCounter-= 10);  //new
-}); //new
+	$('#progress').attr('value', valueCounter-= 10);  
+}); 
 
 
 //Calculates score and returns user score
