@@ -184,7 +184,7 @@ valueCounter += 10;
 	$('#next').on('click', function(){
 	$('#progress').attr('value', valueCounter+= 10);
 });
-	$('#previous').on('click', function(){  //new
+	$('#previous').on('click', function(){  
 	$('#progress').attr('value', valueCounter-= 10);  
 }); 
 
@@ -199,11 +199,16 @@ function displayScore() {
 		numCorrect++;
 	}
 }
-	$('#progress').hide(); //test
-	score.append('Scored ' + numCorrect + ' outta ' + questions.length + ' correct!!! ');
 
+	$('#progress').hide(); 
+	
+	if (numCorrect > 6) {
+	score.append('You ' + ' got ' + numCorrect + ' outta ' + questions.length + ' correct! ' + ' Niceee!' );
+	}	else {		
+		score.append('Only ' + numCorrect + ' outta ' + questions.length + ' correct. ' + ' Study ' + ' up!' ); 
+		};
 	return score;
-	}
+	 }
 })();
 
 
