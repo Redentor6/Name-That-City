@@ -64,7 +64,7 @@ let questions = [{
 		//If they don't select, this happens
 		if (isNaN(selections[qCounter])) {
 			alert('Select Something Please!');
-			valueCounter -= 10; //New
+			valueCounter -= 10;
 		}	else {
 			qCounter++;
 			displayNext();

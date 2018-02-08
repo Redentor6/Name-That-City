@@ -1,25 +1,33 @@
 # Name-That-City
-Multiple choice game with terrain association.
+Multiple choice game with terrain association representing the questions created with jquery.
 
-
-Multiple choice hangman style game with photos as the answers
 
 ## Wireframes: 
-2 pages. First page will be basic multiple choice 4 question layout with equally sized photos as the answers. Second page will be a congratulation/try again with a restart option.
+Page will be basic multiple choice 8 question layout with photos representing the questions. After the user finishes the questions there will be a congratulation/try again with a restart option regardless of the user outcome.
 
-![imagename](./assets/page1.png)
-![imagename](./assets/page2.png)
+The photos used where downloaded from google images as follows:
+
+![dub](./assets/page1.png)
+![hk](./assets/page1.png)
+![nyc](./assets/page1.png)
+![prs](./assets/page1.png)
+![rdj](./assets/page1.png)
+![syd](./assets/page1.png)
+![tky](./assets/page1.png)
+![trn](./assets/page1.png)
 
 
 
 ## Game Structure: 
-Challenges expected to face are primarily design oriented by getting all the photos in a uniform and presentable size. Want to incorporate animation in the congratulation/try again page. 
+Challenges expected to face are primarily design oriented by getting all the photos in marginally uniform and presentable size within the margin frame. Want to incorporate animation in the congratulation/try again page. 
 
 ## Phases of Completion: 
-Gathering and sizing photos, if/else statements, event listeners, linking sheets, creating buttons with functions and/or links and styling.
+Gathering and sizing photos, if/else statements, event listeners, creating buttons with functions and styling.
 
-## Links:
+## Links Cited:
 
-Google maps, city photos, https://www.sitepoint.com/simple-javascript-quiz/
+City photos in assets folder
+https://learn.jquery.com/ 
+https://www.sitepoint.com
 https://stackoverflow.com/questions/11828042/add-a-image-with-java-script-to-quiz
 https://www.w3schools.com/graphics/game_images.asp

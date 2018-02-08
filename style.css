@@ -2,6 +2,13 @@ body {
 	font-family: sans-serif;
 } 
 
+@media only screen and (max-width: 500px) {
+   body {
+       width: 100%;
+       margin: 0 auto;
+   }
+}
+
 h1	{
 	text-align: center;
 	margin-top: none;
@@ -132,6 +139,7 @@ footer {
 	letter-spacing: .08em;
 	font-weight: 500;
 }
+
 
 
 .creds {
