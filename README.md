@@ -7,6 +7,8 @@ Page will be basic multiple choice 8 question layout with photos representing th
 
 The photos used where downloaded from google images as follows:
 
+./assets/Page_1.png
+./assets/page2.png
 ![dub](./assets/page1.png)
 ![hk](./assets/page1.png)
 ![nyc](./assets/page1.png)
