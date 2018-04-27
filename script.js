@@ -203,7 +203,7 @@ function displayScore() {
 	$('#progress').hide(); 
 	
 	if (numCorrect > 6) {
-	score.append('You ' + ' got ' + numCorrect + ' outta ' + questions.length + ' correct! ' + ' Niceee!' );
+	score.append('You ' + ' got ' + numCorrect + ' outta ' + questions.length + ' correct! ' + ' Niceeee!' );
 	}	else {		
 		score.append('Only ' + numCorrect + ' outta ' + questions.length + ' correct. ' + ' Study ' + ' up!' ); 
 		};
