@@ -203,9 +203,9 @@ function displayScore() {
 	$('#progress').hide(); 
 	
 	if (numCorrect > 6) {
-	score.append('You ' + ' got ' + numCorrect + ' outta ' + questions.length + ' correct! ' + ' Niceeee!' );
+	score.append('You ' + ' got ' + numCorrect + ' out ' + ' of ' questions.length + ' correct! ' + ' Niceeee!' );
 	}	else {		
-		score.append('Only ' + numCorrect + ' outta ' + questions.length + ' correct. ' + ' Study ' + ' up!' ); 
+		score.append('Only ' + numCorrect + ' out ' + ' of ' + questions.length + ' correct. ' + ' Better ' + ' luck ' + ' next ' + ' time. ' + ' 😬 ' ); 
 		};
 	return score;
 	 }
