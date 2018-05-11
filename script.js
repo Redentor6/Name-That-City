@@ -201,7 +201,7 @@ function displayScore() {
 }
 
 	$('#progress').hide(); 
-	
+	//Responses for the user score
 	if (numCorrect > 6) {
 	score.append('You ' + ' got ' + numCorrect + ' out ' + ' of ' + questions.length + ' correct! ' + ' Niceeee!' );
 	}	else {		
